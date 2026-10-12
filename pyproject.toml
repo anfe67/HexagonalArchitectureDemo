@@ -1,0 +1,23 @@
+[project]
+name = "hexagonalarchitecturedemo"
+description = "Hexagonal (Ports & Adapters) architecture demo: domain, ports, adapters, pytest"
+version = "0.1.0"
+requires-python = ">=3.13"
+readme = "README.md"
+dependencies = [
+    "sqlalchemy>=2.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.uv]
+# Treat the project itself as an installable package (src/ layout is auto-detected),
+# so `uv run` puts `hexdemo` on the path in editable mode.
+package = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

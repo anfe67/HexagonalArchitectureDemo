@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+
+# uv / tools
+# NOTE: uv.lock is NOT ignored — commit it for reproducibility.
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Databases created by the demo
+*.db
+*.sqlite3
