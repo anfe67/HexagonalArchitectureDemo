@@ -17,3 +17,6 @@ htmlcov/
 # Databases created by the demo
 *.db
 *.sqlite3
+
+# IDE
+.idea/
