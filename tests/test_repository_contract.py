@@ -7,12 +7,11 @@ inherits the full behavioral guarantee. That's why we test ports, not classes.
 from __future__ import annotations
 
 import pytest
-from sqlalchemy import create_engine
-
 from hexagonal_architecture_demo.adapters.in_memory import InMemoryUserRepository
 from hexagonal_architecture_demo.adapters.sqlalchemy_repo import Base, SqlUserRepository
 from hexagonal_architecture_demo.domain import User
 from hexagonal_architecture_demo.ports import UserRepository
+from sqlalchemy import create_engine
 
 
 def _in_memory() -> InMemoryUserRepository:

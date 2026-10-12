@@ -5,11 +5,13 @@ version = "0.1.0"
 requires-python = ">=3.13"
 readme = "README.md"
 dependencies = [
+    "ruff>=0.17.0",
     "sqlalchemy>=2.0",
 ]
 
 [dependency-groups]
 dev = [
+    "pre-commit>=4.6.2",
     "pytest>=8.0",
 ]
 
@@ -21,3 +23,22 @@ package = true
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["venv", ".venv"]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors (style)
+    "F",   # pyflakes (undefined names, unused imports, ...)
+    "W",   # pycodestyle warnings
+    "I",   # import sorting (isort)
+    "UP",  # pyupgrade (modern syntax)
+    "B",   # flake8-bugbear (common mistakes)
+    "S",   # flake8-bandit-style security rules (fast, complements bandit)
+    "SIM", # simplifications
+    "C4",  # comprehension best practices
+]
+per-file-ignores = { "tests/*.py" = ["S101"] }

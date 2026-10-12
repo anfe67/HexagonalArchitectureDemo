@@ -4,7 +4,6 @@ Run:  uv run python -m hexdemo.main "Alice <alice@example.com>" --db sqlite:///u
       uv run python -m hexdemo.main "alice@example.com" Alice --db memory://
 """
 
-
 import argparse
 import sys
 
@@ -51,7 +50,10 @@ def main(argv: list[str] | None = None) -> int:
         print(f"error: {exc}", file=sys.stderr)
         return 1
 
-    print(f"{'created ' if result.created else 'existing'} user {result.user.email} ({result.user.name})")
+    print(
+        f"{'created ' if result.created else 'existing'} user {result.user.email} "
+        f"({result.user.name})"
+    )
     return 0
 
 

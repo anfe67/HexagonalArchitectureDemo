@@ -1,15 +1,13 @@
 from __future__ import annotations
 
 import pytest
-from sqlalchemy import create_engine
-
 from hexagonal_architecture_demo.adapters.in_memory import InMemoryUserRepository
 from hexagonal_architecture_demo.adapters.sqlalchemy_repo import Base, SqlUserRepository
-from hexagonal_architecture_demo.ports import UserRepository
 from hexagonal_architecture_demo.use_cases import RegisterUser
-
+from sqlalchemy import create_engine
 
 # ---------- unit-level fixtures (no DB at all) ----------
+
 
 @pytest.fixture
 def in_memory_repo() -> InMemoryUserRepository:
@@ -22,6 +20,7 @@ def use_case(in_memory_repo: InMemoryUserRepository) -> RegisterUser:
 
 
 # ---------- adapter fixtures (SQLite in-memory, fresh per test) ----------
+
 
 @pytest.fixture
 def sql_engine():

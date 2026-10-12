@@ -9,10 +9,10 @@ from __future__ import annotations
 
 import uuid
 
-from sqlalchemy import String, UniqueConstraint, Uuid, create_engine, select
+from sqlalchemy import String, UniqueConstraint, Uuid, select
 from sqlalchemy.engine import Engine
 from sqlalchemy.exc import IntegrityError, SQLAlchemyError
-from sqlalchemy.orm import DeclarativeBase, Mapped, Session, mapped_column, sessionmaker
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, sessionmaker
 
 from ..domain import DuplicateEmailError, User
 from ..ports import UserRepository

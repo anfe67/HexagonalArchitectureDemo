@@ -5,7 +5,6 @@ from __future__ import annotations
 import uuid
 
 import pytest
-
 from hexagonal_architecture_demo.domain import DuplicateEmailError, InvalidEmailError
 from hexagonal_architecture_demo.ports import UserRepository
 from hexagonal_architecture_demo.use_cases import RegisterUser
